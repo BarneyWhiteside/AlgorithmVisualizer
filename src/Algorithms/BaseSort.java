@@ -31,7 +31,7 @@ public class BaseSort extends JPanel {
     private final boolean playSounds;
 
     public BaseSort(boolean playSounds){
-        setBackground(Color.gray);
+        setBackground(Color.GRAY);
         array = new int[NUM_BARS];
         barColours = new int[NUM_BARS];
         for(int i = 0; i < NUM_BARS; i++) {
@@ -48,6 +48,7 @@ public class BaseSort extends JPanel {
             }
         });
         add(spinner,BorderLayout.LINE_START);
+        spinner.setVisible(false);
     }
 
     public void shuffleArray(){
@@ -60,7 +61,7 @@ public class BaseSort extends JPanel {
         arrayChanges = 0;
     }
 
-    public void swap(int i, int j, int delay, boolean isStep){
+    public void swap(int i, int j, long delay, boolean isStep){
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
@@ -88,7 +89,7 @@ public class BaseSort extends JPanel {
             Map<RenderingHints.Key, Object> renderingHints = new HashMap<>();
             renderingHints.put(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             panelGraphics.addRenderingHints(renderingHints);
-            panelGraphics.setColor(Color.WHITE);
+            panelGraphics.setColor(Color.BLACK);
             panelGraphics.setFont(new Font("Monospaced", Font.BOLD, 20));
             panelGraphics.drawString(" Current algorithm: " + algorithmName, 10, 30);
             panelGraphics.drawString("Current step delay: " + algorithmDelay + "ms", 10, 55);
@@ -130,10 +131,10 @@ public class BaseSort extends JPanel {
 
                         int val = barColours[x] * 2;
                         if (val > 190) {
-                            bufferedGraphics.setColor(new Color(255 - val, 255, 255 - val));
+                            bufferedGraphics.setColor(new Color(255 - val, 255 - Math.round((float)val / 2), Math.round((float)val / 8)));
                         }
                         else {
-                            bufferedGraphics.setColor(new Color(255, 255 - val, 255 - val));
+                            bufferedGraphics.setColor(new Color(255 - Math.round((float)val / 10), 255 - Math.round((float)val / 8), 255 - val));
                         }
                         bufferedGraphics.fillRect(xBegin, yBegin, barWidth, height);
                         if (barColours[x] > 0) {

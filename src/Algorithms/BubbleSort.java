@@ -9,7 +9,7 @@ public class BubbleSort implements ISortingAlgorithm {
         for(int i = 0; i < len; i++){
             for (int j = 0; j < len; j++){
                 if (array.getValue(j) > array.getValue(j + 1)){
-                    array.swap(j, j+1, 2, true);
+                    array.swap(j, j+1, stepDelay, true);
                 }
             }
         }

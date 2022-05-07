@@ -9,7 +9,7 @@ import javax.swing.*;
 import Algorithms.*;
 
 public final class MenuPanel extends BasePanel {
-    private static final Color BACKGROUND_COLOUR = Color.DARK_GRAY;
+    private static final Color BACKGROUND_COLOUR = Color.GRAY;
     private final ArrayList<AlgorithmCheckBox> checkBoxes;
 
     public MenuPanel(MainPanel panel) {
@@ -22,7 +22,7 @@ public final class MenuPanel extends BasePanel {
         JCheckBox box = new JCheckBox("", true);
         box.setAlignmentX(Component.LEFT_ALIGNMENT);
         box.setBackground(BACKGROUND_COLOUR);
-        box.setForeground(Color.WHITE);
+        box.setForeground(Color.BLACK);
         checkBoxes.add(new AlgorithmCheckBox(algorithm, box));
         panel.add(box);
     }
@@ -46,6 +46,8 @@ public final class MenuPanel extends BasePanel {
 
         sortAlgorithmContainer.setAlignmentX(Component.CENTER_ALIGNMENT);
         addCheckBox(new BubbleSort(),       sortAlgorithmContainer);
+        addCheckBox(new InsertionSort(),    sortAlgorithmContainer);
+        addCheckBox(new QuickSort(),        sortAlgorithmContainer);
 
         JCheckBox soundCheckBox = new JCheckBox("Play Sounds");
         soundCheckBox.setAlignmentX(Component.LEFT_ALIGNMENT);
