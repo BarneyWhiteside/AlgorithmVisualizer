@@ -48,6 +48,7 @@ public final class MenuPanel extends BasePanel {
         addCheckBox(new BubbleSort(),       sortAlgorithmContainer);
         addCheckBox(new InsertionSort(),    sortAlgorithmContainer);
         addCheckBox(new QuickSort(),        sortAlgorithmContainer);
+        addCheckBox(new MergeSort(),        sortAlgorithmContainer);
 
         JCheckBox soundCheckBox = new JCheckBox("Play Sounds");
         soundCheckBox.setAlignmentX(Component.LEFT_ALIGNMENT);

@@ -1,7 +1,7 @@
 package Algorithms;
 
 public class QuickSort implements ISortingAlgorithm{
-    private long stepDelay = 2;
+    private long stepDelay = 10;
     @Override
     public void runSort(BaseSort array) {
         quickSort(array, array.getArraySize() - 1, 0);

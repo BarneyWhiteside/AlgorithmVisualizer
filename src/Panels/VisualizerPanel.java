@@ -39,8 +39,6 @@ public final class VisualizerPanel extends BasePanel {
     }
 
     public void onOpen() {
-        //This would block the EventDispatchThread, and so
-        //it must run on a worker thread
         SwingWorker<Void, Void> swingWorker = new SwingWorker<>() {
             @Override
             protected Void doInBackground() {
